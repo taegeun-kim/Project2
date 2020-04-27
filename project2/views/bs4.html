@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>WEB -{{title}}</title>
+        <meta charset="utf-8">
+        <link type="text/css" rel="stylesheet" href="/static/style.css">
+    </head>
+<body>
+    <h1><a href="/">{{title}}</a></h1>
+    <div id="container">
+        <div id="left">
+            <ol>
+                <h3>{{menu|safe}}</h3>
+            </ol>
+            <div id=button>
+                <button type="button" onclick="location.href='/create'">목록생성</button>
+                <button type="button" onclick="location.href='/delete/{id}'">목록삭제</button>
+                 <button type="button" onclick="location.href='/update/{id}'">목록수정</button>
+            </div>
+        </div>
+        <div id="right">
+            <div>
+                <h2>뉴스 내용 검색</h2>
+                <form action="/main", method='GET'>
+                    <label for ="title">검색 할 날짜를 넣어 주세요</label>
+                    <p><input type="text" name="date" placeholder="예)20040410"></p>
+                    <button type="submit">실행</button>
+                </form>
+                {% for m in message %} 
+                    {{m}}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+    

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>WEB -{{title}}</title>
+        <meta charset="utf-8">
+        <link type="text/css" rel="stylesheet" href="/static/style.css">
+    </head>
+<body>
+    <h1><a href="/">WEB</a></h1>
+    <div id="container">
+        <div id="left">
+            <ol>
+                <h3>{{menu|safe}}</h3>
+            </ol>
+            <div id=button>
+                <button type="button" onclick="location.href='/create'">목록생성</button>
+                <button type="button" onclick="location.href='/delete/{id}'">목록삭제</button>
+                 <button type="button" onclick="location.href='/update/{id}'">목록수정</button>
+            </div>
+        </div>
+        <div id="right">
+            <div>
+                    {{content|safe}}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+    
